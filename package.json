@@ -1,31 +1,31 @@
 {
-	"author": {
-		"name": "Raphael Brandão"
-	},
-	"dependencies": {
-		"modbus-serial": "^4.1.0"
-	},
-	"description": "Modbus-event is a TCP/IP Master, event-driven, implementation for modbus protocol.",
-	"keywords": [
-		"event-driven",
-		"modbus",
-		"tcp/ip"
-	],
-	"license": "MIT",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/raphaelbs/modbus-event.git"
-	},
-	"maintainers": [
-		{
-			"name": "raphaelbs",
-			"email": "raphael.b.souza@hotmail.com"
-		}
-	],
-	"name": "modbus-event",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"version": "2.0.0"
+  "author": {
+    "name": "Raphael Brandão"
+  },
+  "dependencies": {
+    "modbus-serial": "^4.1.0"
+  },
+  "description": "Modbus-event is a TCP/IP Master, event-driven, implementation for modbus protocol.",
+  "keywords": [
+    "event-driven",
+    "modbus",
+    "tcp/ip"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphaelbs/modbus-event.git"
+  },
+  "maintainers": [
+    {
+      "name": "raphaelbs",
+      "email": "raphael.b.souza@hotmail.com"
+    }
+  ],
+  "name": "modbus-event",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.1"
 }

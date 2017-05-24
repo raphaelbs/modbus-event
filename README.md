@@ -11,11 +11,9 @@ Know the [methods](https://www.npmjs.com/package/modbus-serial#methods) section 
 
 ## Installation
 
-```javascript
-var modbusEvent = require('modbus-event');
+```bash
+npm i -S modbus-event
 ```
-
----
 
 ## Usage
 
@@ -24,7 +22,7 @@ var modbusEvent = require('modbus-event');
 var modbusEvent = require('modbus-event');
 // Set constructor options
 var options = {
-	debug : true, // default: false
+    debug : true, // default: false
     ip : '192.168.1.1', // default: '127.0.0.1'
     port : 777, // default: 502
     id : 2 // default: 1
@@ -41,8 +39,6 @@ me.on('update', function(type, address, from, to){
     console.log(type, address, from, to);
 });
 ```
-
----
 
 ## Reference
 
@@ -67,7 +63,7 @@ key | description | type | default
 
 ```javascript
 var options = {
-	debug : true, // default: false
+    debug : true, // default: false
     ip : '192.168.1.1', // default: '127.0.0.1'
     port : 777, // default: 502
     id : 2 // default: 1
@@ -112,21 +108,15 @@ triggers when **any** register is changed | **type** is the address indentifier 
 &nbsp; | **from** is the value before the change
 &nbsp; | **to** is the value after the change
 
----
-
 ## Dependencies
 
 modbus-serial
-
----
 
 ## Contact-me
 * [Email](mailto:raphael.b.souza@hotmail.com)
 * [Facebook](https://facebook.com/raphaelbs)
 * [GitHub](https://github.com/raphaelbs)
 * [NPM](https://npmjs.com/~raphaelbs)
-
----
 
 ## License
 

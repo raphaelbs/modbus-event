@@ -49,7 +49,7 @@ Main function of [modbus-event](https://www.npmjs.com/package/modbus-event)
 
 ***
 
-### Constructor object argument: Options
+### Constructor argument: Options
 
 key | description | type | default
 --- | --- | --- | ---
@@ -76,7 +76,7 @@ var me = modbusEvent(options);
 >_return Object { callee : fn, on : fn }_
 
 The constructor of [modbus-event](https://www.npmjs.com/package/modbus-event).
-Return the following objects:
+Return the following functions:
 
 key | value
 --- | ---
@@ -101,6 +101,7 @@ ___
 >_type Function(event, callback)_
 
 Assign an event and the respective callback. This are the available events:
+
 update | function(type, address, from, to)
 --- | ---
 triggers when **any** register is changed | **type** is the address indentifier ('coils', 'inputStatus', 'holdingReg', 'inputReg')

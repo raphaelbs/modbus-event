@@ -4,8 +4,6 @@ Modbus-event is a TCP/IP Master, event-driven, implementation for modbus protoco
 This package was built upon the great [modbus-serial](https://www.npmjs.com/package/modbus-serial).
 Make sure to read the [methods](https://www.npmjs.com/package/modbus-serial#methods) section to get the best out this module.
 
-___
-
 ## Installation
 
 ```bash
@@ -39,14 +37,12 @@ me.on('update', function(type, address, newValue, oldValue){
 
 ## Reference
 
-### require('modbus-event')
+#### require('modbus-event')
 >_return Function([options](#constructor-object-argument-options))_
 
 Main function of [modbus-event](https://www.npmjs.com/package/modbus-event)
 
-***
-
-### Constructor argument: Options
+#### Constructor argument: Options
 
 key | description | type | default
 --- | --- | --- | ---
@@ -67,9 +63,8 @@ var options = {
 };
 var me = modbusEvent(options);
 ```
-***
 
-### require('modbus-event')(options)
+#### require('modbus-event')(options)
 >_return Object { run : fn, on : fn }_
 
 The constructor of [modbus-event](https://www.npmjs.com/package/modbus-event).
@@ -80,7 +75,6 @@ key | value
 _run_ | function(client, data, next)
 _on_ | function(event, callback)
 
-___
 #### require('modbus-event')(options)#run
 >_type Function(client, data, next)_
 
@@ -91,8 +85,6 @@ argument | description
 _client_ | an instance of [modbus-serial](https://www.npmjs.com/package/modbus-serial)
 _data_ | object containing all addresses and values
 _next_ | a function that you **need to invoke** when done
-
-___
 
 #### require('modbus-event')(options)#on
 >_type Function(event, callback)_
@@ -108,7 +100,7 @@ triggers when **any** register is changed | **type** is the address indentifier 
 
 ## Dependencies
 
-modbus-serial
+[modbus-serial](https://www.npmjs.com/package/modbus-serial)
 
 ## Contact-me
 * [Email](mailto:raphael.b.souza@hotmail.com)

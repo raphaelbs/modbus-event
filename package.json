@@ -3,6 +3,7 @@
     "name": "Raphael Brandão"
   },
   "dependencies": {
+    "deprecate": "^1.0.0",
     "modbus-serial": "^4.1.0"
   },
   "description": "Modbus-event is a TCP/IP Master, event-driven, implementation for modbus protocol.",

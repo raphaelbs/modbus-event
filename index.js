@@ -6,7 +6,9 @@
  */
 // Modulo modbus-serial
 var ModbusRTU = require('modbus-serial');
+var deprecate = require('deprecate');
 var client = new ModbusRTU();
+
 // vars
 var arrays = {
   coils : [], inputStatus : [], holdingReg : [], inputReg : []
@@ -25,7 +27,7 @@ var displayChange = function(data, array, key){
     for(var i = 0; i<data.length; i++){
         if(data[i] !== array[i]){
             print('[' + key + ':' + i + '] ' + array[i] + ' -> ' + data[i]);
-            events.update && typeof events.update === 'function' && events.update(key, i, array[i], data[i]);
+            events.update && events.update(key, i, data[i], array[i]);
         }
     }
 };
@@ -97,11 +99,19 @@ var Obj = function(options){
     tryToConnect();
     return {
         on: function (name, callback) {
+			if(!name || !callback || typeof name != 'string' || typeof callback != 'function')
+				throw new Error('Invalid arguments in method #on(' + typeof name + ', ' + typeof callback + ')' + ' where it should be: #on(string, function)');
             events[name] = callback;
         },
-        callee : function(callback){
+        run : function(callback){
+			if(!callback || typeof callback != 'function')
+				throw new Error('Invalid arguments in method #run(' + typeof callback + ')' + ' where it should be: #run(function)');
             stack.push(callback);
-        }
+        },
+		callee: function(callback){
+			deprecate('callee() is deprecated, use #run() instead.');
+			this.run(callback);
+		}
     }
 };
 module.exports = Obj;

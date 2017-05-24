@@ -1,13 +1,10 @@
 # modbus-event
 
 Modbus-event is a TCP/IP Master, event-driven, implementation for modbus protocol.
-
-#### Please Note
-
 This package was built upon the great [modbus-serial](https://www.npmjs.com/package/modbus-serial).
-Know the [methods](https://www.npmjs.com/package/modbus-serial#methods) section to get the best out of it.
+Make sure to read the [methods](https://www.npmjs.com/package/modbus-serial#methods) section to get the best out this module.
 
----
+___
 
 ## Installation
 
@@ -30,13 +27,13 @@ var options = {
 var me = modbusEvent(options);
 
 // Executes some function in between the reading stage
-me.callee(function(client, datas, next){
+me.run(function(client, datas, next){
     client.writeCoil(1, 1).then(next);
 });
 
 // Assign a listener event
-me.on('update', function(type, address, from, to){
-    console.log(type, address, from, to);
+me.on('update', function(type, address, newValue, oldValue){
+    console.log(type, address, newValue, oldValue);
 });
 ```
 
@@ -73,18 +70,18 @@ var me = modbusEvent(options);
 ***
 
 ### require('modbus-event')(options)
->_return Object { callee : fn, on : fn }_
+>_return Object { run : fn, on : fn }_
 
 The constructor of [modbus-event](https://www.npmjs.com/package/modbus-event).
 Return the following functions:
 
 key | value
 --- | ---
-_callee_ | function(client, data, next)
+_run_ | function(client, data, next)
 _on_ | function(event, callback)
 
 ___
-#### require('modbus-event')(options)#callee
+#### require('modbus-event')(options)#run
 >_type Function(client, data, next)_
 
 Executes arbitrary code when the serial channel is available. The function arguments are:
@@ -102,12 +99,12 @@ ___
 
 Assign an event and the respective callback. This are the available events:
 
-update | function(type, address, from, to)
+update | function(type, address, newValue, oldValue)
 --- | ---
 triggers when **any** register is changed | **type** is the address indentifier ('coils', 'inputStatus', 'holdingReg', 'inputReg')
 &nbsp; | **address** is the changed address in the moment
-&nbsp; | **from** is the value before the change
-&nbsp; | **to** is the value after the change
+&nbsp; | **newValue** is the value before the update
+&nbsp; | **oldValue** is the value after the update
 
 ## Dependencies
 
